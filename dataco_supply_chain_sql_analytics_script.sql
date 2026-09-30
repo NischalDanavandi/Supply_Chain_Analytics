@@ -7,7 +7,7 @@
 -- -----------------------------------------------------------------------------
 
 -- Create Dimension: Customer
-CREATE TABLE IF NOT EXISTS dim_customer (
+CREATE TABLE dim_customer (
     customer_id INT PRIMARY KEY,
     customer_fname VARCHAR(100),
     customer_lname VARCHAR(100),
@@ -18,7 +18,7 @@ CREATE TABLE IF NOT EXISTS dim_customer (
 );
 
 -- Create Dimension: Product
-CREATE TABLE IF NOT EXISTS dim_product (
+CREATE TABLE dim_product (
     product_card_id INT PRIMARY KEY,
     category_id INT,
     category_name VARCHAR(100),
@@ -27,14 +27,14 @@ CREATE TABLE IF NOT EXISTS dim_product (
 );
 
 -- Create Dimension: Shipping
-CREATE TABLE IF NOT EXISTS dim_shipping (
+CREATE TABLE dim_shipping (
     shipping_id SERIAL PRIMARY KEY,
     shipping_mode VARCHAR(50),
     delivery_status VARCHAR(50)
 );
 
 -- Create Fact Table: Orders
-CREATE TABLE IF NOT EXISTS fact_orders (
+CREATE TABLE fact_orders (
     order_item_id INT PRIMARY KEY,
     order_id INT,
     customer_id INT REFERENCES dim_customer(customer_id),
