@@ -152,7 +152,8 @@ DIVIDE(
 
 ## Dashboard Preview
 
-> *(Include screenshot here: `![Dashboard Preview](powerbi/dashboard_screenshot.png)`)*
+> *<img width="1336" height="722" alt="Screenshot 2026-09-23 235427" src="https://github.com/user-attachments/assets/d3ac70a6-c92e-4e16-aa7a-7e8f45a89cba" />
+*
 
 **Key Dashboard Features:**
 - Executive KPI Cards: Total Sales, Total Profit, Profit Margin %, Late Delivery Rate.
@@ -189,4 +190,3 @@ DIVIDE(
 ## Author
 
 **Nischal Danavandi**  
-Data Analyst / Business Analyst — Bengaluru, India
