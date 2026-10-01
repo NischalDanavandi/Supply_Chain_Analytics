@@ -1,5 +1,5 @@
 """
-Supply Chain & Logistics Analytics
+Supply Chain Analytics
 Data Cleaning & Exploratory Analysis
 
 Input:  DataCoSupplyChainDataset.csv (raw, 180,519 rows x 53 columns)
