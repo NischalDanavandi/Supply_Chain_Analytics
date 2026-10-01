@@ -144,7 +144,7 @@ DIVIDE(
 
 | Focus Area | Key Finding | Strategic Recommendation |
 | :--- | :--- | :--- |
-| **Shipping Performance** | **First Class (95.3% late)** and **Second Class (76.6% late)** fail commitments, compared to Standard Class (38.1% late). Promised windows are unrealistic; actual fulfillment speed is faster than standard. | **Recalibrate SLAs:** Adjust customer-facing delivery expectations for expedited tiers rather than altering local regional logistics operations. |
+| **Shipping Performance** | **First Class (95.3% late)** and **Second Class (76.6% late)** fail delivery commitments far more often than Standard Class (38.1% late). First Class actually delivers in roughly half the time of Standard Class in absolute terms; Second Class delivers in a comparable timeframe to Standard despite promising a much shorter window. In both cases, the high late-delivery rate stems from an unrealistic promised window, not slow fulfillment. | **Recalibrate SLAs:** Adjust customer-facing delivery expectations for expedited tiers rather than altering local regional logistics operations. |
 | **Product Margins** | The **Strength Training** category generates strong volume but has a **0.68% profit margin** (vs. company baseline of 11–16%). | **Margin Audit:** Perform a targeted cost-structure review of Strength Training product lines to renegotiate supplier pricing or adjust discounting logic. |
 | **Regional Distribution** | Profit margins across all 23 global sales regions remain consistent within a **11%–15% band**. | **Strategy Realignment:** Prioritize product-level and catalog margin optimizations over region-specific strategy overhauls. |
 
@@ -152,12 +152,11 @@ DIVIDE(
 
 ## Dashboard Preview
 
-> *<img width="1336" height="722" alt="Screenshot 2026-09-23 235427" src="https://github.com/user-attachments/assets/d3ac70a6-c92e-4e16-aa7a-7e8f45a89cba" />
-*
+> *(Include screenshot here: `![Dashboard Preview](powerbi/dashboard_screenshot.png)`)*
 
 **Key Dashboard Features:**
-- Executive KPI Cards: Total Sales, Total Profit, Profit Margin %, Late Delivery Rate.
-- Shipping Performance Breakdown: Scheduled vs. Real Shipping Days by Class.
+- Executive KPI Cards: Total Sales, Total Profit, Profit Margin %.
+- Shipping Performance Breakdown: Late Delivery % by Shipping Mode; Scheduled vs. Real Shipping Days by Class.
 - Bottom 10 Profit Margin Categories.
 - Dynamic Region and Category Slicers.
 
@@ -190,3 +189,4 @@ DIVIDE(
 ## Author
 
 **Nischal Danavandi**  
+Data Analyst / Business Analyst — Bengaluru, India
