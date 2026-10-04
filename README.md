@@ -1,4 +1,4 @@
-# Supply Chain & Logistics Analytics
+# Supply Chain Analytics
 
 An end-to-end data analytics pipeline analyzing ~180,000 order-line records from the DataCo Smart Supply Chain Dataset. This project covers raw data cleaning and validation in Python, star-schema modeling in PostgreSQL, and interactive visualization in Power BI.
 
@@ -153,7 +153,8 @@ DIVIDE(
 
 ## Dashboard Preview
 
-> *(Include screenshot here: `![Dashboard Preview](powerbi/dashboard_screenshot.png)`)*
+<img width="1336" height="722" alt="Screenshot 2026-09-23 235427" src="https://github.com/user-attachments/assets/d054eddd-3cab-4d55-9d3b-d4715b0b916a" />
+
 
 **Key Dashboard Features:**
 - Executive KPI Cards: Total Sales, Total Profit, Profit Margin %.
@@ -190,4 +191,4 @@ DIVIDE(
 ## Author
 
 **Nischal Danavandi**  
-Data Analyst / Business Analyst — Bengaluru, India
+
