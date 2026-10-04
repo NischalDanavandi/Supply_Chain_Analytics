@@ -1,4 +1,4 @@
-# Supply Chain  Analytics
+# Supply Chain & Logistics Analytics
 
 An end-to-end data analytics pipeline analyzing ~180,000 order-line records from the DataCo Smart Supply Chain Dataset. This project covers raw data cleaning and validation in Python, star-schema modeling in PostgreSQL, and interactive visualization in Power BI.
 
@@ -19,7 +19,7 @@ An end-to-end data analytics pipeline analyzing ~180,000 order-line records from
 
 ## Overview
 
-Raw transactional data often conceals critical operational bottlenecks beneath high-level revenue growth. This project traces a full data pipeline from unvalidated transactional records to a normalized relational schema and interactive executive dashboard—uncovering hidden delivery delays and product margin leaks.
+Raw transactional data often conceals critical operational bottlenecks beneath high-level revenue growth. This project traces a full data pipeline from unvalidated transactional records to a structured dimensional schema and interactive executive dashboard—uncovering hidden delivery delays and product margin leaks.
 
 ## Problem Statement
 
@@ -53,14 +53,14 @@ Initial data preparation resolved missing values, privacy concerns, and structur
 
 ### Data Validation Insights
 - **Line-Item Granularity:** Verified that `Order Profit Per Order` is recorded at the line-item level despite its name, making direct aggregation safe without double-counting risks.
-- **Shipping Discrepancies:** Identified that ~2.6% of records show slight variances between recorded real shipping days and actual date-diffs, reflecting internal business-day tracking logic.
+- **Shipping Discrepancies:** Identified that ~2.6% of records show slight variances between recorded real shipping days and actual date-diffs; flagged as a documented data-quality note rather than corrected, since the underlying cause (e.g., business-day vs. calendar-day tracking) could not be confirmed from the data alone.
 - **Partial-Year Handling:** Excluded 2018 (January-only data) from YoY trend analyses to prevent skewed reporting.
 
 ---
 
 ## Data Modeling & Analytics (SQL / DAX)
 
-The raw staging table was normalized into a **Star Schema** consisting of three dimension tables and one central fact table.
+The raw staging table was organized into a **dimensional (star) schema** consisting of three dimension tables and one central fact table.
 
 ```text
        [dim_customer] ──────┐
@@ -83,6 +83,7 @@ SELECT
     s."Sales", 
     s."Order Item Total", 
     s."Order Profit Per Order"
+    -- additional columns omitted for brevity (23 total in the full table)
 FROM staging_orders s
 JOIN dim_shipping ds
     ON s."Shipping Mode" = ds."Shipping Mode"
@@ -144,16 +145,15 @@ DIVIDE(
 
 | Focus Area | Key Finding | Strategic Recommendation |
 | :--- | :--- | :--- |
-| **Shipping Performance** | **First Class (95.3% late)** and **Second Class (76.6% late)** fail delivery commitments far more often than Standard Class (38.1% late). First Class actually delivers in roughly half the time of Standard Class in absolute terms; Second Class delivers in a comparable timeframe to Standard despite promising a much shorter window. In both cases, the high late-delivery rate stems from an unrealistic promised window, not slow fulfillment. | **Recalibrate SLAs:** Adjust customer-facing delivery expectations for expedited tiers rather than altering local regional logistics operations. |
-| **Product Margins** | The **Strength Training** category generates strong volume but has a **0.68% profit margin** (vs. company baseline of 11–16%). | **Margin Audit:** Perform a targeted cost-structure review of Strength Training product lines to renegotiate supplier pricing or adjust discounting logic. |
+| **Shipping Performance** | **First Class (95.3% late)** and **Second Class (76.6% late)** fail delivery commitments far more often than Standard Class (38.1% late). First Class actually delivers in roughly half the time of Standard Class in absolute terms; Second Class delivers in a comparable timeframe to Standard despite promising a much shorter window. In both cases, the high late-delivery rate is consistent with an unrealistic promised window, not slow fulfillment. | **Recalibrate delivery-window expectations:** Adjust customer-facing delivery estimates for expedited tiers rather than altering local regional logistics operations. |
+| **Product Margins** | The **Strength Training** category has a **0.68% profit margin** (vs. company baseline of 11–16%) despite non-trivial sales — one of the lowest-margin outliers in the dataset. | **Margin Audit:** Perform a targeted cost-structure review of Strength Training product lines to renegotiate supplier pricing or adjust discounting logic. |
 | **Regional Distribution** | Profit margins across all 23 global sales regions remain consistent within a **11%–15% band**. | **Strategy Realignment:** Prioritize product-level and catalog margin optimizations over region-specific strategy overhauls. |
 
 ---
 
 ## Dashboard Preview
 
-<img width="1336" height="722" alt="Screenshot 2026-09-23 235427" src="https://github.com/user-attachments/assets/66350fa7-c7bb-4ca6-a97d-b4da00829914" />
-
+> *(Include screenshot here: `![Dashboard Preview](powerbi/dashboard_screenshot.png)`)*
 
 **Key Dashboard Features:**
 - Executive KPI Cards: Total Sales, Total Profit, Profit Margin %.
@@ -190,4 +190,4 @@ DIVIDE(
 ## Author
 
 **Nischal Danavandi**  
-
+Data Analyst / Business Analyst — Bengaluru, India
