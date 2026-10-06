@@ -1,6 +1,6 @@
 # Supply Chain Analytics
 
-An end-to-end data analytics pipeline analyzing ~180,000 order-line records from the DataCo Smart Supply Chain Dataset. This project covers raw data cleaning and validation in Python, star-schema modeling in PostgreSQL, and interactive visualization in Power BI.
+An end-to-end data analytics workflow analyzing 180K+ order-line records from the DataCo Smart Supply Chain Dataset. This project covers raw data cleaning and validation in Python, star-schema modeling in PostgreSQL, and interactive visualization in Power BI.
 
 ## Table of Contents
 - [Overview](#overview)
